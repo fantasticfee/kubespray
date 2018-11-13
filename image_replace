@@ -1,0 +1,27 @@
+#!/bin/bash
+grc_image_files=(
+./extra_playbooks/roles/download/defaults/main.yml
+./extra_playbooks/roles/kubernetes-apps/ansible/defaults/main.yml
+./roles/download/defaults/main.yml
+./roles/kubernetes-apps/ansible/defaults/main.yml
+./inventory/mycluster/group_vars/k8s-cluster/k8s-cluster.yml
+)
+ 
+ for file in ${grc_image_files[@]} ; do
+ sed -i 's/gcr.io\/google[_-]containers/registry.cn-hangzhou.aliyuncs.com\/fantasticfee/g' $file
+ done
+  
+  #quay_image_files=(
+  #    ./extra_playbooks/roles/download/defaults/main.yml
+  #        ./roles/download/defaults/main.yml
+#	  )
+	   
+	   #for file in ${quay_image_files[@]} ; do
+	   #sed -i 's/quay.io\/coreos\//registry.cn-hangzhou.aliyuncs.com\/znscn\/coreos-/g' $file
+	   #sed -i 's/quay.io\/calico\//registry.cn-hangzhou.aliyuncs.com\/znscn\/calico-/g' $file
+	   #sed -i 's/quay.io\/l23network\//registry.cn-hangzhou.aliyuncs.com\/znscn\/l23network-/g' $file
+
+	   #sed -i 's/registry.cn-hangzhou.aliyuncs.com\/znscn\/coreos-/quay.io\/coreos\//g' $file
+	   #sed -i 's/registry.cn-hangzhou.aliyuncs.com\/znscn\/calico-/quay.io\/calico\//g' $file
+	   #sed -i 's/registry.cn-hangzhou.aliyuncs.com\/znscn\/l23network-/quay.io\/l23network\//g' $file
+	   #done
