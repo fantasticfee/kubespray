@@ -1,0 +1,12 @@
+nat_outgoing: true
+flannel_backend_type: "vxlan"
+dashboard_enabled: true
+kube_api_anonymous_auth: true
+kube_service_addresses: 10.233.0.0/18
+kube_pods_subnet: 10.233.64.0/18
+kube_proxy_mode: ipvs
+kube_network_plugin: calico
+kube_version: v1.12.3
+kube_image_repo: registry.cn-hangzhou.aliyuncs.com/fantasticfee
+k8s_image_pull_policy: IfNotPresent
+dns_mode: coredns
